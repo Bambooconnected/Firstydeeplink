@@ -6,7 +6,7 @@
       "name": "Support",
       "email": "support@firsty.app"
     },
-    "version": "1.0"
+    "version": "1.1"
   },
   "servers": [
     {
@@ -169,7 +169,9 @@
           }
         },
         "deprecated": false
-      },
+      }
+    },
+    "/partners/users/{partnerClientId}/subscription": {
       "post": {
         "tags": [
           "Partner Users"
@@ -316,6 +318,71 @@
         },
         "deprecated": false
       }
+    },
+    "post": {
+      "tags": [
+        "Partner Users"
+      ],
+      "summary": "New Partner User with a Subscription",
+      "description": "Creates a new Firsty User with a Subscription",
+      "operationId": "NewPartnerUserWithSubscription",
+      "parameters": [
+        {
+          "name": "partnerUserIccId",
+          "in": "path",
+          "description": "",
+          "required": true,
+          "style": "simple",
+          "explode": false,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "name": "partnerClientId",
+          "in": "path",
+          "description": "",
+          "required": true,
+          "style": "simple",
+          "explode": false,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "requestBody": {
+        "description": "",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/partnerClientId_partnerUserIccId_body"
+            },
+            "example": {
+              "subscriptionType": "",
+              "subscriptionCountries": "",
+              "subscriptionDuration": "",
+              "activationType": ""
+            }
+          }
+        },
+        "required": true
+      },
+      "responses": {
+        "200": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SubscriptionResponse"
+              }
+            }
+          }
+        },
+        "404": {
+          "description": "Partner not found"
+        }
+      },
+      "deprecated": false
     },
     "/partners/users/subscriptions/{partnerClientId}/{partnerUserIccId}": {
       "get": {

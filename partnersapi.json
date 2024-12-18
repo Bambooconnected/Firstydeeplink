@@ -327,17 +327,6 @@
         "operationId": "NewPartnerUserWithSubscription",
         "parameters": [
           {
-            "name": "partnerUserIccId",
-            "in": "path",
-            "description": "",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "partnerClientId",
             "in": "path",
             "description": "",

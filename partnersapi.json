@@ -10,11 +10,11 @@
   },
   "servers": [
     {
-      "url": "https://backoffice.test.firsty.app/api/public/v1",
+      "url": "https://backoffice.test.firsty.app/api/v1",
       "description": "Firsty Test Server"
     },
     {
-      "url": "https://backoffice.firsty.app/api/public/v1",
+      "url": "https://backoffice.firsty.app/api/v1",
       "description": "Firsty Production Server"
     }
   ],
@@ -35,7 +35,7 @@
     }
   ],
   "paths": {
-    "/auth/token": {
+    "/partners/auth/token": {
       "get": {
         "tags": [
           "Partner Main"
@@ -129,7 +129,7 @@
         "deprecated": false
       }
     },
-    "/partners/users/{partnerClientId}": {
+    "/partners/{partnerClientId}/users": {
       "get": {
         "tags": [
           "Partner Users"
@@ -211,7 +211,7 @@
         "deprecated": false
       }
     },
-    "/partners/users/{partnerClientId}/{partnerUserIccId}": {
+    "/partners/{partnerClientId}/users/{partnerUserIccId}": {
       "get": {
         "tags": [
           "Partner Users"
@@ -264,7 +264,7 @@
         "deprecated": false
       }
     },
-    "/partners/users/{partnerClientId}/{partnerUserIccId}/usage": {
+    "/partners/{partnerClientId}/users/{partnerUserIccId}/usage": {
       "get": {
         "tags": [
           "Partner Users"
@@ -317,7 +317,7 @@
         "deprecated": false
       }
     },
-    "/partners/users/{partnerClientId}/subscription": {
+    "/partners/{partnerClientId}/users/subscription": {
       "post": {
         "tags": [
           "Partner Users"
@@ -384,7 +384,7 @@
         "deprecated": false
       }
     },
-    "/partners/users/subscriptions/{partnerClientId}/{partnerUserIccId}": {
+    "/partners/{partnerClientId}/users/{partnerUserIccId}/subscriptions": {
       "get": {
         "tags": [
           "Partner Subscriptions"
@@ -508,7 +508,7 @@
         "deprecated": false
       }
     },
-    "/partners/users/subscriptions/{partnerClientId}/{partnerUserIccId}/{transactionId}/activate": {
+    "/partners/{partnerClientId}/users/{partnerUserIccId}/subscriptions/{transactionId}/activate": {
       "patch": {
         "tags": [
           "Partner Subscriptions"
@@ -572,7 +572,7 @@
         "deprecated": false
       }
     },
-    "/partners/users/subscriptions/{partnerClientId}/{partnerUserIccId}/{transactionId}/boost": {
+    "/partners/{partnerClientId}/users/{partnerUserIccId}/subscriptions/{transactionId}/boost": {
       "patch": {
         "tags": [
           "Partner Subscriptions"
